@@ -66,11 +66,11 @@ static const Checkpoints::CCheckpointData data = {
 };
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
-    boost::assign::map_list_of(0, uint256("0x001"));
+    boost::assign::map_list_of(0, uint256("0x000006b9b8e313fba9e825e119cc35a5a1b8435179ac1f17d93414c7d53b0b0b"));
 
 static const Checkpoints::CCheckpointData dataTestnet = {
     &mapCheckpointsTestnet,
-    1740710,
+    1541980801,
     0,
     250};
 
@@ -78,7 +78,7 @@ static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
     boost::assign::map_list_of(0, uint256("0x001"));
 static const Checkpoints::CCheckpointData dataRegtest = {
     &mapCheckpointsRegtest,
-    1454124731,
+    1541980802,
     0,
     100};
 
@@ -228,11 +228,11 @@ public:
         nMaxMoneyOut = 21000000 * COIN;
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime = 1534570200;
-        genesis.nNonce = 21148656;
+        genesis.nTime = 1541980801;
+        genesis.nNonce = 32895;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x000000938f4f20c6ccb3fea36539ade5af73d0bb45c55af64c7f7f1bfa5f3381"));
+        assert(hashGenesisBlock == uint256("0x000006b9b8e313fba9e825e119cc35a5a1b8435179ac1f17d93414c7d53b0b0b"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -296,13 +296,13 @@ public:
         nTargetTimespan = 24 * 60 * 60; // Bitcoin Green: 1 day
         nTargetSpacing = 2 * 60;        // Bitcoin Green: 1 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
-        genesis.nTime = 1516926684;
+        genesis.nTime = 1541980802;
         genesis.nBits = 0x207fffff;
-        genesis.nNonce = 20542300;
+        genesis.nNonce = 265308;
 
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 29333;
-        assert(hashGenesisBlock == uint256("0x229874aa8a92df3347600978e226ba57bc994b9fa291ea50519afafca2d50ed3"));
+        assert(hashGenesisBlock == uint256("0x00000698a63492db458cb8572f8949e4a8b2170b2dd1e8c6e76c1d08c340f944"));
 
         vFixedSeeds.clear(); //! Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();      //! Regtest mode doesn't have any DNS seeds.
