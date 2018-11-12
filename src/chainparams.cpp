@@ -297,7 +297,7 @@ public:
         nTargetSpacing = 2 * 60;        // French: 1 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         genesis.nTime = 1541980802;
-        genesis.nBits = 0x207fffff;
+        genesis.nBits = 0x1e0ffff0;
         genesis.nNonce = 265308;
 
         hashGenesisBlock = genesis.GetHash();
