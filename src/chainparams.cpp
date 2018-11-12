@@ -78,9 +78,9 @@ static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
     boost::assign::map_list_of(0, uint256("0x00000698a63492db458cb8572f8949e4a8b2170b2dd1e8c6e76c1d08c340f944"));
 static const Checkpoints::CCheckpointData dataRegtest = {
     &mapCheckpointsRegtest,
-    1541980802,
     0,
-    100};
+    0,
+    0};
 
 class CMainParams : public CChainParams
 {
@@ -298,7 +298,7 @@ public:
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         genesis.nTime = 1541980802;
         genesis.nBits = 0x207fffff;
-        genesis.nNonce = 265308;
+        genesis.nNonce = 1070400;
 
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 29333;
