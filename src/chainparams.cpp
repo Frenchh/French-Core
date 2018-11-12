@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2017-2018 The French developers
+// Copyright (c) 2017-2018 The Bitcoin Green developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -53,7 +53,8 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0,      uint256("0x00000a112d26b60aeb4c34a6f6ed270a384413120210c02d1516aaa59001d89f"));
+    (0,      uint256("0x00000a112d26b60aeb4c34a6f6ed270a384413120210c02d1516aaa59001d89f"))
+    ;
 
 
 static const Checkpoints::CCheckpointData data = {
@@ -106,15 +107,15 @@ public:
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 0;
-        nTargetTimespan = 1 * 60; // French: 1 day
-        nTargetSpacing = 2 * 60;  // French: 2 minutes
+        nTargetTimespan = 1 * 60; // Bitcoin Green: 1 day
+        nTargetSpacing = 2 * 60;  // Bitcoin Green: 2 minutes
         nMaturity = 10;
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 21000000 * COIN;
 
         /** Height or Time Based Activations **/
         nLastPOWBlock = 200;
-        nModifierUpdateBlock = 1; // we use the version 2 for FRC
+        nModifierUpdateBlock = 1; // we use the version 2 for BITG
 
         /**
          * Build the genesis block. Note that the output of the genesis coinbase cannot
@@ -146,29 +147,29 @@ public:
         genesis.nVersion = 1;
         genesis.nTime = 1541980800;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 1070400;
+        genesis.nNonce = 185250;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x00000a112d26b60aeb4c34a6f6ed270a384413120210c02d1516aaa59001d89f"));
-        assert(genesis.hashMerkleRoot == uint256("0xf3b1155d07a61c395be790f5054743743ca563d66a2d4431a90a34fef5f75776"));
+        assert(hashGenesisBlock == uint256("0x000002528907eceb5be6523a9734bc83dd331206b1391e6048f8983c954c6056"));
+        assert(genesis.hashMerkleRoot == uint256("0xc721ad1f7ccb72d59cb311e635d017d4987809402fa6cecfdbe81ab19ce09f06"));
 
         // DNS Seeding
         vSeeds.clear();
-        /*vSeeds.push_back(CDNSSeedData("seed1.savebitcoin.io", "seed1.savebitcoin.io"));
-        vSeeds.push_back(CDNSSeedData("seed2.savebitcoin.io", "seed2.savebitcoin.io"));
-        vSeeds.push_back(CDNSSeedData("seed3.savebitcoin.io", "seed3.savebitcoin.io"));*/
+        //vSeeds.push_back(CDNSSeedData("seed1.savebitcoin.io", "seed1.savebitcoin.io"));
+        //vSeeds.push_back(CDNSSeedData("seed2.savebitcoin.io", "seed2.savebitcoin.io"));
+        //vSeeds.push_back(CDNSSeedData("seed3.savebitcoin.io", "seed3.savebitcoin.io"));
 
-        // French addresses start with 'F'
+        // Bitcoin Green addresses start with 'F'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 36);
-        // French script addresses start with '3'
+        // Bitcoin Green script addresses start with '3'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 6);
-        // French private keys start with 'K'
+        // Bitcoin Green private keys start with 'K'
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 46);
-        // French BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
+        // Bitcoin Green BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
-        // French BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
+        // Bitcoin Green BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
-        // French BIP44 coin type is '222' (0x800000de)
+        // Bitcoin Green BIP44 coin type is '222' (0x800000de)
         // BIP44 coin type is from https://github.com/satoshilabs/slips/blob/master/slip-0044.md
         base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x80)(0x00)(0x00)(0xde).convert_to_container<std::vector<unsigned char> >();
 
@@ -218,8 +219,8 @@ public:
         nRejectBlockOutdatedMajority = 75;
         nToCheckBlockUpgradeMajority = 100;
         nMinerThreads = 0;
-        nTargetTimespan = 1 * 60; // French: 1 day
-        nTargetSpacing = 2 * 60;  // French: 1 minute
+        nTargetTimespan = 1 * 60; // Bitcoin Green: 1 day
+        nTargetSpacing = 2 * 60;  // Bitcoin Green: 1 minute
         nLastPOWBlock = 200;
         nMaturity = 15;
         nMasternodeCountDrift = 4;
@@ -236,17 +237,17 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
 
-        // Testnet French addresses start with 'g'
+        // Testnet Bitcoin Green addresses start with 'g'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 98);
-        // Testnet French script addresses start with '5' or '6'
+        // Testnet Bitcoin Green script addresses start with '5' or '6'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 12);
         // Testnet private keys start with 'k'
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 108);
-        // Testnet French BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Testnet Bitcoin Green BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
-        // Testnet French BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Testnet Bitcoin Green BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
-        // Testnet french BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet bitcoin green BIP44 coin type is '1' (All coin's testnet default)
         base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x80)(0x00)(0x00)(0x01).convert_to_container<std::vector<unsigned char> >();
 
         convertSeed6(vFixedSeeds, pnSeed6_test, ARRAYLEN(pnSeed6_test));
@@ -292,8 +293,8 @@ public:
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 1;
-        nTargetTimespan = 24 * 60 * 60; // French: 1 day
-        nTargetSpacing = 2 * 60;        // French: 1 minutes
+        nTargetTimespan = 24 * 60 * 60; // Bitcoin Green: 1 day
+        nTargetSpacing = 2 * 60;        // Bitcoin Green: 1 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         genesis.nTime = 1516926684;
         genesis.nBits = 0x207fffff;
