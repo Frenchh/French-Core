@@ -77,7 +77,7 @@ static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
     boost::assign::map_list_of(0, uint256("0x001"));
 static const Checkpoints::CCheckpointData dataRegtest = {
     &mapCheckpointsRegtest,
-    1541980800,
+    0,
     0,
     100};
 
@@ -110,7 +110,7 @@ public:
         nTargetSpacing = 2 * 60;  // French: 2 minutes
         nMaturity = 10;
         nMasternodeCountDrift = 20;
-        nMaxMoneyOut = 21000000 * COIN;
+        nMaxMoneyOut = 4200000 * COIN;
 
         /** Height or Time Based Activations **/
         nLastPOWBlock = 200;
@@ -153,6 +153,7 @@ public:
         assert(genesis.hashMerkleRoot == uint256("0xf3b1155d07a61c395be790f5054743743ca563d66a2d4431a90a34fef5f75776"));
 
         // DNS Seeding
+        vSeeds.clear();
         /*vSeeds.push_back(CDNSSeedData("seed1.savebitcoin.io", "seed1.savebitcoin.io"));
         vSeeds.push_back(CDNSSeedData("seed2.savebitcoin.io", "seed2.savebitcoin.io"));
         vSeeds.push_back(CDNSSeedData("seed3.savebitcoin.io", "seed3.savebitcoin.io"));*/
