@@ -69,7 +69,7 @@ static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
 
 static const Checkpoints::CCheckpointData dataTestnet = {
     &mapCheckpointsTestnet,
-    1541980800,
+    1740710,
     0,
     250};
 
@@ -77,7 +77,7 @@ static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
     boost::assign::map_list_of(0, uint256("0x001"));
 static const Checkpoints::CCheckpointData dataRegtest = {
     &mapCheckpointsRegtest,
-    0,
+    1454124731,
     0,
     100};
 
@@ -212,7 +212,7 @@ public:
         pchMessageStart[1] = 0x8a;
         pchMessageStart[2] = 0xe5;
         pchMessageStart[3] = 0xa8;
-        vAlertPubKey = ParseHex("042af53d65bcebf41c40e04b71694f30aa060dd27071697ae00ae4d12e8fae7078c2d7a052b6f3cbc45299de3faf9d6dc709f22ac36b1b2124fedc63e5574670c8");
+        vAlertPubKey = ParseHex("04ba89975265af1d4c6295d3587eb4a0e4b758bde1621ef2ab8f92b98e7ed1c85547c9b7a3f145a66aa2abb91db5c13295828e77d823ea6d9b4bb89912425e1efe");
         nDefaultPort = 19333;
         nEnforceBlockUpgradeMajority = 51;
         nRejectBlockOutdatedMajority = 75;
@@ -227,11 +227,11 @@ public:
         nMaxMoneyOut = 4200000 * COIN;
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime = 1541980800;
-        genesis.nNonce = 1070400;
+        genesis.nTime = 1534570200;
+        genesis.nNonce = 21148656;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x00000a112d26b60aeb4c34a6f6ed270a384413120210c02d1516aaa59001d89f"));
+        assert(hashGenesisBlock == uint256("0x000000938f4f20c6ccb3fea36539ade5af73d0bb45c55af64c7f7f1bfa5f3381"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -259,7 +259,7 @@ public:
         fTestnetToBeDeprecatedFieldRPC = true;
 
         nPoolMaxTransactions = 2;
-        strSporkKey = "04b1b20d12a81485c8c5ed643213d35b39915835cbe3ab9a6faeee2ce6326addffab6d736adf5e85e0e61fd6256ef6c2e9b39b214374a5dcd4ea4fa017550ec2af";
+        strSporkKey = "041bab97de321ccf1e78d10164f90bd87e3070ddb5586389013e9f15c4931e2451f318f1a8f177c5e9a3f5b4b13145f78e8116d2aa7ae14ef27f1f076b02ba852c";
         strMasternodePoolDummyAddress = "";
         nStartMasternodePayments = genesis.nTime + 86400; // 24 hours after genesis
         nBudget_Fee_Confirmations = 3; // Number of confirmations for the finalization fee. We have to make this very short
@@ -295,13 +295,13 @@ public:
         nTargetTimespan = 24 * 60 * 60; // French: 1 day
         nTargetSpacing = 2 * 60;        // French: 1 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
-        genesis.nTime = 1541980800;
+        genesis.nTime = 1516926684;
         genesis.nBits = 0x207fffff;
-        genesis.nNonce = 1070400;
+        genesis.nNonce = 20542300;
 
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 29333;
-        assert(hashGenesisBlock == uint256("0x00000a112d26b60aeb4c34a6f6ed270a384413120210c02d1516aaa59001d89f"));
+        assert(hashGenesisBlock == uint256("0x229874aa8a92df3347600978e226ba57bc994b9fa291ea50519afafca2d50ed3"));
 
         vFixedSeeds.clear(); //! Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();      //! Regtest mode doesn't have any DNS seeds.
